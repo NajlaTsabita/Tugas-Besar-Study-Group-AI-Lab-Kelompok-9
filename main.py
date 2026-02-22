@@ -13,7 +13,11 @@ st.set_page_config(page_title="Prediksi Kualitas Udara", page_icon=":sparkles:",
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("air_quality_dataset.csv")
+    df = pd.read_csv("air_quality_dataset.csv")
+    # Data cleaning
+    non_negative_columns = ["PM2.5", "PM10", "NOx", "NO2", "SO2", "CO", "CO2", "CH4", "VOCs", "Humidity"]
+    df[non_negative_columns] = df[non_negative_columns].clip(lower=0)
+    return df
 
 df = load_data()
 

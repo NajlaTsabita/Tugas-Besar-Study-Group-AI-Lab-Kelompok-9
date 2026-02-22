@@ -134,7 +134,7 @@ def show(df):
         st.subheader("Visualisasi Bivariat")
         st.write("Visualisasi untuk melihat hubungan antara dua variabel.")
         st.subheader("Heatmap")
-        num_cols = ['PM2.5', 'PM10', 'NOx', 'NO2', 'SO2', 'CO2', 'CH4', 'Temperature', 'Humidity']
+        num_cols = ['PM2.5', 'PM10', 'NOx', 'NO2', 'SO2', 'CO2', 'CH4', 'VOCs', 'Temperature', 'Humidity']
         fig = plt.figure(figsize=(12, 8))
         sns.heatmap(df[num_cols].corr(), annot=True, fmt=".2f", cmap="coolwarm", linewidths=0.5)
         plt.title("Heatmap Korelasi Antar Variabel")
@@ -144,7 +144,7 @@ def show(df):
         st.subheader("Visualisasi Multivariat")
         st.write("Visualisasi untuk melihat hubungan antara lebih dari dua variabel.")
         st.subheader("Pairplot")
-        num_cols = ['PM2.5', 'PM10', 'NOx', 'NO2', 'SO2', 'CO2', 'CH4', 'Temperature', 'Humidity']
+        num_cols = ['PM2.5', 'PM10', 'NOx', 'NO2', 'SO2', 'CO2', 'CH4', 'VOCs', 'Temperature', 'Humidity']
         sns.pairplot(
             df[num_cols+['Location_Type']],
             hue='Location_Type',
