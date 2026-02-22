@@ -27,7 +27,7 @@ if menu == "Home":
     st.title("Prediksi Kualitas Udara")
     st.subheader("Aplikasi untuk memprediksi kualitas udara berdasarkan data historis.")
     
-    st.write("Selamat datang di aplikasi prediksi kualitas udara! Aplikasi ini menggunakan data historis untuk memprediksi kualitas udara di masa depan. Silakan pilih menu di sidebar untuk mulai menjelajahi data dan model prediksi.")
+    st.write("Selamat datang di aplikasi prediksi kualitas udara! Aplikasi ini menggunakan data historis untuk memprediksi kualitas udara lingkungan anda. Silakan pilih menu di sidebar untuk mulai menjelajahi data dan model prediksi.")
     
     col1, col2 = st.columns(2)
     

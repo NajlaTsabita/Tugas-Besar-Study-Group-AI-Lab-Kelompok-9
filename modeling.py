@@ -7,7 +7,7 @@ from sklearn.metrics import r2_score, mean_squared_error, accuracy_score, classi
 
 def show(df):
     st.title("Modeling Kualitas Udara (Random Forest)")
-    st.markdown("Menggunakan algoritma **Random Forest** dengan fitur yang telah lolos uji Multikolinearitas (VIF).")
+    st.markdown("Modeling menggunakan algoritma **Random Forest**.")
 
     features = ["SO2", "NO2", "VOCs", "Temperature"]
     X = df[features]
