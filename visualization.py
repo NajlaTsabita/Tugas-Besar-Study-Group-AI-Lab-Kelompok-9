@@ -9,8 +9,9 @@ def show(df):
     st.header("Visualisasi Data")
     st.write("Visualisasi untuk memahami distribusi dan hubungan antar variabel.")
 
-    menu = st.radio("Menu Visualisasi", ["Visualisasi Univariat", "Visualisasi Bivariat", "Visualisasi Multivariat"], horizontal=True)
-    if menu == "Visualisasi Univariat":
+    tab1, tab2, tab3 = st.tabs(["Visualisasi Univariat", "Visualisasi Bivariat", "Visualisasi Multivariat"])
+
+    with tab1:
         st.subheader("Visualisasi Univariat")
         st.write("Visualisasi untuk melihat distribusi masing-masing variabel.")
         st.subheader("Histogram")
@@ -129,7 +130,7 @@ def show(df):
             plt.title("Boxplot Humidity")
             st.pyplot(fig)
 
-    elif menu == "Visualisasi Bivariat":
+    with tab2:
         st.subheader("Visualisasi Bivariat")
         st.write("Visualisasi untuk melihat hubungan antara dua variabel.")
         st.subheader("Heatmap")
@@ -139,7 +140,7 @@ def show(df):
         plt.title("Heatmap Korelasi Antar Variabel")
         st.pyplot(fig)
 
-    elif menu == "Visualisasi Multivariat":
+    with tab3:
         st.subheader("Visualisasi Multivariat")
         st.write("Visualisasi untuk melihat hubungan antara lebih dari dua variabel.")
         st.subheader("Pairplot")
@@ -153,3 +154,4 @@ def show(df):
         )
         plt.suptitle("Pairplot Antar Variabel", y=1.02)
         st.pyplot(plt)
+
